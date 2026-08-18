@@ -2,3 +2,8 @@
 let myAge: any = 36;
 
 myAge = "37";
+
+// Using union types allows you to specify multiple types for a variable, providing more flexibility while still maintaining type safety.
+let otherAge: number | string = 36;
+
+otherAge = "37"; // This is valid because otherAge can be either a number or a string.
