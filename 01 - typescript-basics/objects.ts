@@ -15,3 +15,10 @@ const user: {
     id: 1,
   },
 };
+
+// The must not be null type
+let val: {} = "Aman";
+val = 20;
+val = true;
+// val = null; // This will cause an error because null is not assignable to type '{}'
+// val = undefined; // This is allowed because undefined is assignable to type '{}'
