@@ -14,3 +14,24 @@ function log(message: string): void {
 function throwError(message: string): never {
   throw new Error(message);
 }
+
+// Functions as types
+const performJob = (callback: (message: string) => void): void => {
+  callback("Hello World!");
+};
+
+performJob(log); // Output: Hello World!
+
+const user: {
+  name: string;
+  age: number;
+  greeting: (message: string) => void;
+} = {
+  name: "John Doe",
+  age: 30,
+  greeting(message: string): void {
+    console.log(`${this.name} says: ${message}`);
+  },
+};
+
+user.greeting("Hello!"); // Output: John Doe says: Hello!
